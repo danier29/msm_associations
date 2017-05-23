@@ -12,7 +12,9 @@ validates :year, numericality: {:only_integer => true, :greater_than_or_equal_to
   #- duration: must be integer between 0 and 2764800, but it can be blank (hint: there is an option `:allow_blank => true`)
 validates :duration, numericality: {:only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 2764800 }
 
+  belongs_to(:director, :class_name => "Director",  :foreign_key => "director_id")
 
+  has_many(:characters, :class_name => "Character", :foreign_key => "movie_id")
 
   #- description: no rules
   #- image_url: no rules
