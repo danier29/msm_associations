@@ -7,6 +7,6 @@ validates :name, :presence => true, :uniqueness => {:scope => :dob}
 # - bio: no rules
 # - image_url: no rules
 
-has_many(:movie, :class_name => "Movie", :foreign_key => "movie_id")
+has_many(:movie, :class_name => "Movie", :foreign_key => "director_id")
 
 end
